@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Visualization Portfolio</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
@@ -36,6 +39,106 @@
       <section>
         <h2>Coffee Bean Visualization</h2>
         <p>Insert here.</p>
+        <svg id="bubble_chart"></svg>
+        <div id="tooltip" class="tooltip" style="display: none;"></div>
+        
+
+        <script>
+            // Replace this with your actual data
+            var data = [
+                {id: 1, total_cup_points: 80, x: 0.2, y: 0.8},
+                {id: 2, total_cup_points: 90, x: 0.4, y: 0.6},
+                {id: 3, total_cup_points: 70, x: 0.3, y: 0.7},
+                {id: 4, total_cup_points: 60, x: 0.5, y: 0.5},
+                {id: 5, total_cup_points: 75, x: 0.6, y: 0.2},
+                // Add more data points
+            ];
+
+            var width = 800;
+            var height = 600;
+
+            var svg = d3.select("#bubble_chart")
+                .attr("width", width)
+                .attr("height", height);
+
+            var xScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([0, width]);
+
+            var yScale = d3.scaleLinear()
+                .domain([0, 1])
+                .range([height, 0]);
+
+            var sizeScale = d3.scaleSqrt()
+                .domain(d3.extent(data, d => d.total_cup_points))
+                .range([10, 60]);
+
+            var tooltip = d3.select("#tooltip");
+
+            var bubbles = svg.selectAll(".bubble")
+                .data(data)
+                .join("circle")
+                .attr("class", "bubble")
+                .attr("r", d => sizeScale(d.total_cup_points))
+                .attr("cx", d => xScale(d.x))
+                .attr("cy", d => yScale(d.y))
+                .call(drag(simulation));
+
+            bubbles.on("mouseover", (event, d) => {
+                    tooltip.style("display", "block")
+                        .html("ID: " + d.id + "<br/>Total Cup Points: " + d.total_cup_points);
+                })
+                .on("mousemove", (event, d) => {
+                    tooltip.style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                })
+                .on("mouseout", (event, d) => {
+                    tooltip.style("display", "none");
+                });
+
+            function drag(simulation) {
+                function dragstarted(event, d) {
+                    if (!event.active) simulation.alphaTarget(0).alpha(0.5).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                }
+
+                function dragged(event, d) {
+                    d.fx = event.x;
+                    d.fy = event.y;
+                }
+
+                function dragended(event, d) {
+                    if (!event.active) simulation.alphaTarget(0).alpha(0.5);
+                    d.fx = null
+                    d.fy = null
+                    d3.select(this).transition().duration(500).attr("cx", xScale(d.x)).attr("cy", yScale(d.y));
+                }
+
+
+                return d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended);
+            }   
+
+            function simulationTick() {
+            bubbles
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+            }
+
+              
+            var simulation = d3.forceSimulation(data)
+            .force("x", d3.forceX(d => xScale(d.x)).strength(0.1))
+            .force("y", d3.forceY(d => yScale(d.y)).strength(0.1))
+            .force("collide", d3.forceCollide(d => sizeScale(d.total_cup_points) + 1))
+            .on("tick", simulationTick);
+
+            simulation.restart()
+
+        </script>
+
       </section>
     </main>
   </body>
