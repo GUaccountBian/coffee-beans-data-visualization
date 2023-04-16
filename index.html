@@ -41,7 +41,7 @@
         <p>Insert here.</p>
         <svg id="bubble_chart"></svg>
         <div id="tooltip" class="tooltip" style="display: none;"></div>
-        
+        <div id="plotly_container"></div>
 
         <script>
             // Replace this with your actual data
@@ -89,6 +89,36 @@
                 .attr("cx", d => xScale(d.x))
                 .attr("cy", d => yScale(d.y))
                 .call(drag(simulation));
+            
+            async function loadPlotlyPlot(containerId, plotFile) {
+                try {
+                  const response = await fetch(plotFile);
+                  const htmlContent = await response.text();
+                  
+                  // Create an iframe element
+                  const iframe = document.createElement("iframe");
+                  
+                  // Apply some basic styling to the iframe
+                  iframe.style.width = "100%";
+                  iframe.style.height = "600px";
+                  iframe.style.border = "none";
+                  
+                  // Insert the iframe into the container
+                  const container = document.getElementById(containerId);
+                  container.innerHTML = "";
+                  container.appendChild(iframe);
+                  
+                  // Write the content of the plotly_plot.html file into the iframe
+                  iframe.contentDocument.open();
+                  iframe.contentDocument.write(htmlContent);
+                  iframe.contentDocument.close();
+                } catch (error) {
+                  console.error("Error loading Plotly plot:", error);
+                }
+            }
+                
+                
+              
 
             bubbles.on("mouseover", (event, d) => {
                     tooltip.style("display", "block")
@@ -100,6 +130,9 @@
                 })
                 .on("mouseout", (event, d) => {
                     tooltip.style("display", "none");
+                })
+                .on("click", (event, d) => {
+                  loadPlotlyPlot("plotly_container", "./pages/plotly_plot.html");
                 });
 
               function bounceEaseOut(t) {
@@ -160,6 +193,8 @@
             simulation.restart()
 
         </script>
+        
+
 
       </section>
     </main>
