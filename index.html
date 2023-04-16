@@ -46,12 +46,25 @@
         <script>
             // Replace this with your actual data
             var data = [
-                {id: 1, total_cup_points: 80, x: 0.2, y: 0.8},
-                {id: 2, total_cup_points: 90, x: 0.4, y: 0.6},
-                {id: 3, total_cup_points: 70, x: 0.3, y: 0.7},
-                {id: 4, total_cup_points: 60, x: 0.5, y: 0.5},
-                {id: 5, total_cup_points: 75, x: 0.6, y: 0.2},
-                // Add more data points
+                {id: "Mexico", total_cup_points: 81.67, x: 0.4, y: 0.482,plot_url:"./pages/plotly_plot0.html"},
+                {id: "Colombia", total_cup_points: 83.33, x: 0.4, y: 0.6,plot_url:"./pages/plotly_plot1.html"},
+                {id: "Guatemala", total_cup_points: 82.41, x: 0.3, y: 0.7,plot_url:"./pages/plotly_plot2.html"},
+                {id: "Brazil", total_cup_points: 82.50, x: 0.5, y: 0.5,plot_url:"./pages/plotly_plot3.html"},
+                {id: "China", total_cup_points: 82.08, x: 0.4, y: 0.6,plot_url:"./pages/plotly_plot4.html"},
+                {id: "United States (Hawaii)", total_cup_points: 83.17, x: 0.4542, y: 0.7087,plot_url:"./pages/plotly_plot5.html"},
+                {id: "Honduras", total_cup_points: 81.59, x:  0.5021, y: 0.6729,plot_url:"./pages/plotly_plot6.html"},
+                {id: "Costa Rica", total_cup_points: 83.18, x : 0.4321, y : 0.3195,plot_url:"./pages/plotly_plot7.html"},
+                {id: "Ethiopia", total_cup_points: 85.46, x : 0.3956, y : 0.6498,plot_url:"./pages/plotly_plot8.html"},
+                {id: "Tanzania", total_cup_points: 82.34, x : 0.3379, y : 0.7423,plot_url:"./pages/plotly_plot9.html"},
+                {id: "Uganda", total_cup_points: 83.97, x : 0.3565, y : 0.5287,plot_url:"./pages/plotly_plot10.html"},
+                {id: "Thailand", total_cup_points: 82.66, x : 0.5776, y : 0.5739,plot_url:"./pages/plotly_plot11.html"},
+                {id: "Nicaragua", total_cup_points: 80.96, x : 0.4348, y : 0.4191,plot_url:"./pages/plotly_plot12.html"},
+                {id: "Kenya", total_cup_points: 84.49, x : 0.3491, y : 0.3865,plot_url:"./pages/plotly_plot13.html"},
+                {id: "El Salvador", total_cup_points: 83.34, x : 0.5612, y : 0.3812,plot_url:"./pages/plotly_plot14.html"},
+                {id: "Indonesia", total_cup_points: 82.99, x : 0.4596, y : 0.5893,plot_url:"./pages/plotly_plot15.html"},
+                {id: "India", total_cup_points: 81.84, x : 0.4798, y : 0.4869,plot_url:"./pages/plotly_plot16.html"},
+                {id: "Malawi", total_cup_points: 81.83, x : 0.4284, y : 0.4954,plot_url:"./pages/plotly_plot17.html"},
+                {id: "Peru", total_cup_points: 83.25, x: 0.5, y: 0.6,plot_url:"./pages/plotly_plot18.html"},
             ];
 
             var width = 800;
@@ -88,11 +101,12 @@
                 .attr("r", d => sizeScale(d.total_cup_points))
                 .attr("cx", d => xScale(d.x))
                 .attr("cy", d => yScale(d.y))
+                .attr("data-plot", d => d.plot_url)
                 .call(drag(simulation));
             
-            async function loadPlotlyPlot(containerId, plotFile) {
+            async function loadPlotlyPlot(containerId, plotUrl) {
                 try {
-                  const response = await fetch(plotFile);
+                  const response = await fetch(plotUrl);
                   const htmlContent = await response.text();
                   
                   // Create an iframe element
@@ -132,7 +146,7 @@
                     tooltip.style("display", "none");
                 })
                 .on("click", (event, d) => {
-                  loadPlotlyPlot("plotly_container", "./pages/plotly_plot.html");
+                  loadPlotlyPlot("plotly_container",  d.plot_url);
                 });
 
               function bounceEaseOut(t) {
