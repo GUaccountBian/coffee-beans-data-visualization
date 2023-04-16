@@ -75,6 +75,12 @@
 
             var tooltip = d3.select("#tooltip");
 
+            var simulation = d3.forceSimulation(data)
+            .force("x", d3.forceX(d => xScale(d.x)).strength(0.1))
+            .force("y", d3.forceY(d => yScale(d.y)).strength(0.1))
+            .force("collide", d3.forceCollide(d => sizeScale(d.total_cup_points) + 1))
+            .on("tick", simulationTick);
+
             var bubbles = svg.selectAll(".bubble")
                 .data(data)
                 .join("circle")
@@ -96,6 +102,23 @@
                     tooltip.style("display", "none");
                 });
 
+              function bounceEaseOut(t) {
+                  const b = 7.5625;
+                  const c = 2.75;
+                  if (t < 1 / c) {
+                      return b * t * t;
+                  } else if (t < 2 / c) {
+                      t -= 1.5 / c;
+                      return b * t * t + 0.75;
+                  } else if (t < 2.5 / c) {
+                      t -= 2.25 / c;
+                      return b * t * t + 0.9375;
+                  } else {
+                      t -= 2.625 / c;
+                      return b * t * t + 0.984375;
+                  }
+              }
+              
             function drag(simulation) {
                 function dragstarted(event, d) {
                     if (!event.active) simulation.alphaTarget(0).alpha(0.5).restart();
@@ -109,11 +132,16 @@
                 }
 
                 function dragended(event, d) {
-                    if (!event.active) simulation.alphaTarget(0).alpha(0.5);
-                    d.fx = null
-                    d.fy = null
-                    d3.select(this).transition().duration(500).attr("cx", xScale(d.x)).attr("cy", yScale(d.y));
-                }
+                  if (!event.active) simulation.alphaTarget(0).alpha(0.5);
+                  d.fx = null;
+                  d.fy = null;
+                  d3.select(this)
+                      .transition()
+                      .duration(1)
+                      .ease(bounceEaseOut)
+                      .attr("cx", xScale(d.x))
+                      .attr("cy", yScale(d.y));
+              }
 
 
                 return d3.drag()
@@ -128,12 +156,6 @@
                 .attr("cy", d => d.y);
             }
 
-              
-            var simulation = d3.forceSimulation(data)
-            .force("x", d3.forceX(d => xScale(d.x)).strength(0.1))
-            .force("y", d3.forceY(d => yScale(d.y)).strength(0.1))
-            .force("collide", d3.forceCollide(d => sizeScale(d.total_cup_points) + 1))
-            .on("tick", simulationTick);
 
             simulation.restart()
 
