@@ -11,7 +11,7 @@ body {
   
   /* Header styles */
   header {
-    background-image: url('coffee-header1.jpg');
+    background-image: url('./images/coffee-header1.jpg');
     background-size: cover;
     position: relative;
     background-position: 50%;
