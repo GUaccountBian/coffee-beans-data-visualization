@@ -41,7 +41,8 @@
         <p>Insert here.</p>
         <svg id="bubble_chart"></svg>
         <div id="tooltip" class="tooltip" style="display: none;"></div>
-        <div id="plotly_container"></div>
+        <object id="plotly_object" data="./pages/plotly_plot0.html" type="text/html" width="100%" height="410px"
+        style="margin-top: 30px;"></object>
 
         <script>
             // Replace this with your actual data
@@ -165,7 +166,10 @@
                     tooltip.style("display", "none");
                 })
                 .on("click", (event, d) => {
-                  loadPlotlyPlot("plotly_container",  d.plot_url);
+                  //loadPlotlyPlot("plotly_container",  d.plot_url);
+                  const plotlyObject = document.getElementById("plotly_object");
+                  plotlyObject.setAttribute("data", d.plot_url); // Replace "new_plot_path.html" with the desired path to your new HTML file
+
                 });
 
               function bounceEaseOut(t) {
