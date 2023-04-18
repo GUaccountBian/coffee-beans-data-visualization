@@ -201,3 +201,39 @@ figcaption {
   text-align: center;
   margin-bottom: 30px;
 }
+
+/* Style the dropdown button */
+.dropbtn {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the dropdown menu when the user clicks on the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  border: 1px solid #5C3B21;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
