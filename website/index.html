@@ -9,10 +9,10 @@
   </head>
 
   <nav>
-    <li> <a href="">Coffee Bean Visualization</a></li>
+    <li> <a href="./index.html">Coffee Bean Visualization</a></li>
     <li> <a href="">Data</a></li>
-    <li> <a href="">Method</a></li>
-    <li> <a href="">Code</a></li>
+    <li> <a href="./method.html">Method</a></li>
+    <li> <a href="https://github.com/anly503/spring2023-project-team-07" target="blank">Code</a></li>
     <li> <a href="">Authors</a></li>
   </nav>
 
@@ -37,9 +37,9 @@
       </section>
 
       <section>
-        <h2>Coffee Bean Visualization</h2>
-        <p>Insert here.</p>
+        <h2>Coffee Tasting Profiles of Selected Countries</h2>
         <svg id="bubble_chart"></svg>
+        <figcaption style="text-align:left"><b>Figure 3</b>: Shows information about different countries' coffee quality based on their total cup points(calculated by summing all favor tasting measurement)</figcaption>
         <div id="tooltip" class="tooltip" style="display: none;"></div>
         <object id="plotly_object" data="./pages/plotly_plot0.html" type="text/html" width="100%" height="410px"
         style="margin-top: 30px;"></object>
@@ -70,11 +70,9 @@
 
             var width = 800;
             var height = 600;
-
             var svg = d3.select("#bubble_chart")
                 .attr("width", width)
                 .attr("height", height);
-
 
             var xScale = d3.scaleLinear()
                 .domain([0, 1])
@@ -95,9 +93,11 @@
             .force("y", d3.forceY(d => yScale(d.y)).strength(0.1))
             .force("collide", d3.forceCollide(d => sizeScale(d.total_cup_points) + 1))
             .on("tick", simulationTick);
+
+
             // Add an SVG pattern for each image
             const defs = svg.append("defs");
-
+            
             defs.selectAll(".image-pattern")
                 .data(data)
                 .join("pattern")
@@ -153,7 +153,8 @@
                   console.error("Error loading Plotly plot:", error);
                 }
             }
-                
+
+
             bubbles.on("mouseover", (event, d) => {
                     tooltip.style("display", "block")
                         .html("ID: " + d.id + "<br/>Total Cup Points: " + d.total_cup_points);
@@ -230,7 +231,10 @@
             simulation.restart()
 
         </script>
-        
+        <figcaption style="text-align:left"><b>Figure 4</b>: The radar plot is used to explore the flavor profile of different coffee varieties . The area indicates the overall intensity of the flavor.</figcaption>
+        <p>Coffee is one of the most popular drinks in the world, with millions of people enjoying it daily. However, the flavor of coffee can vary widely depending on where it's grown and how it's roasted. To understand the complexity of coffee flavor profiles, we turned to data from a global coffee tasting competition. By analyzing this data, we were able to identify the countries that produce the highest-rated coffees, as well as the flavor attributes that make them stand out. Our interactive bubble plot shows the top coffee-producing countries, with the size of the bubbles representing average rating of their coffees. We can see that Ethiopia, Uganda, and Kenya are the highest-rated coffee producers.</p>
+
+        <p>To further understand what makes these coffees stand out, we used a radar plot to visualize their flavor attributes, such as acidity, sweetness, and body. We can see that Ethiopian coffees have high acidity, while Colombian coffees have a balanced flavor profile with moderate levels of all attributes. By combining these visualizations, we can gain a deeper appreciation for the complexity of coffee flavor and the important role that geography plays in shaping it.</p>
 
 
       </section>

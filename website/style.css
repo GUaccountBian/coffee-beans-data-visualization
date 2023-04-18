@@ -102,3 +102,102 @@ body {
     font-size: 12px;
     pointer-events: none;
 }
+
+.d-md-flex {
+  display: flex;
+}
+
+.flex-md-equal {
+  flex: 1;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.my-md-3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ps-md-3 {
+  padding-left: 1rem;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.me-md-3 {
+  margin-right: 1rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.pt-md-5 {
+  padding-top: 3rem;
+}
+
+.px-md-5 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+p > i {
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .flex-md-equal {
+    flex: none;
+  }
+}
+
+figcaption {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 30px;
+}
