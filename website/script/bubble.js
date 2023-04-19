@@ -17,8 +17,7 @@ var data = [
     {id: "El Salvador", total_cup_points: 83.34, x : 0.5612, y : 0.3812,plot_url:"./pages/plotly_plot14.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Flag_of_El_Salvador.svg/1920px-Flag_of_El_Salvador.svg.png"},
     {id: "Indonesia", total_cup_points: 82.99, x : 0.4596, y : 0.5893,plot_url:"./pages/plotly_plot15.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/1920px-Flag_of_Indonesia.svg.png"},
     {id: "India", total_cup_points: 81.84, x : 0.4798, y : 0.4869,plot_url:"./pages/plotly_plot16.html",background_image_url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1920px-Flag_of_India.svg.png"},
-    {id: "Malawi", total_cup_points: 81.83, x : 0.4284, y : 0.4954,plot_url:"./pages/plotly_plot17.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1920px-Flag_of_Malawi.svg.png"},
-    {id: "United States", total_cup_points: 86.34, x: 0.5, y: 0.6,plot_url:"./pages/plotly_plot18.html",background_image_url:"https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"},
+    {id: "Malawi", total_cup_points: 81.83, x : 0.4284, y : 0.4954,plot_url:"./pages/plotly_plot17.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1920px-Flag_of_Malawi.svg.png"}
 ];
 
 var width = 800;
