@@ -1029,6 +1029,12 @@ function createChordDiagram(matrix, labels) {
         .on("mouseover", (event, d) => {
             // Highlight related chords and arcs
             d3.selectAll(".ribbons path")
+                .filter(dd => dd.source.index === d.index || dd.target.index === d.index)
+                .transition()
+                .style("opacity", 1)
+
+            // Grey out unrelated chords
+            d3.selectAll(".ribbons path")
                 .filter(dd => dd.source.index !== d.index && dd.target.index !== d.index)
                 .transition()
                 .style("opacity", 0.1);
@@ -1037,7 +1043,7 @@ function createChordDiagram(matrix, labels) {
             // Reset the opacity of chords
             d3.selectAll(".ribbons path")
                 .transition()
-                .style("opacity", 1);
+                .style("opacity", 0.3);
         })
         .append("title")
         .text((d, i) => `${labels[i]}: ${d.value.toLocaleString()}`);
@@ -1053,6 +1059,7 @@ function createChordDiagram(matrix, labels) {
         .attr("d", ribbon)
         .attr("fill", d => color(d.source.index))
         .attr("stroke", d => d3.rgb(color(d.source.index)).darker())
+        .style("opacity", 0.3)
         .on("mouseover", (event, d) => {
             // Highlight the selected chord
             d3.select(event.currentTarget)
@@ -1063,36 +1070,32 @@ function createChordDiagram(matrix, labels) {
             d3.selectAll(".ribbons path")
                 .filter(dd => dd !== d)
                 .transition()
-                .style("opacity", 0.1);
+                .style("opacity", 0.05);
         })
         .on("mouseout", (event, d) => {
             // Reset the opacity of all chords
             d3.selectAll(".ribbons path")
                 .transition()
-                .style("opacity", 1);
+                .style("opacity", 0.3);
         })
         .append("title")
         .text(d => `${labels[d.source.index]} → ${labels[d.target.index]}: ${d.source.value.toLocaleString()}\n${labels[d.target.index]} → ${labels[d.source.index]}: ${d.target.value.toLocaleString()}`);
 
     // Add labels to the arcs
-    svg
-        .append("g")
-        .attr("class", "labels")
-        .attr("font-size", 10)
-        .attr("font-weight", "bold")
-        .attr("text-anchor", "middle")
-        .selectAll("text")
-        .data(chord.groups)
-        .join("text")
-        .attr(
-            "transform",
-            (d) =>
-                `rotate(${(((d.startAngle + d.endAngle) / 2) * 180) / Math.PI - 90
-                }) translate(${outerRadius + 5}, 0)${(d.startAngle + d.endAngle) / 2 > Math.PI
-                    ? " rotate(180)"
-                    : ""
-                }`
-        )
-        .attr("dy", "0.35em")
-        .text((d, i) => labels[i]);
+    svg.append("g")
+    .attr("class", "labels")
+    .attr("font-size", 10)
+    .attr("font-weight", "bold")
+    .selectAll("text")
+    .data(chord.groups)
+    .join("text")
+    .attr("transform", d => {
+        const angle = (d.startAngle + d.endAngle) / 2;
+        const xPos = Math.cos(angle - Math.PI / 2) * (outerRadius + 10);
+        const yPos = Math.sin(angle - Math.PI / 2) * (outerRadius + 10);
+        return `translate(${xPos}, ${yPos})`;
+    })
+    .attr("dy", ".35em")
+    .attr("text-anchor", d => ((d.startAngle + d.endAngle) / 2 > Math.PI) ? "end" : "start")
+    .text((d, i) => labels[i]);
 }
