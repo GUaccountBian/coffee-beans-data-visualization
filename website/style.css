@@ -237,3 +237,22 @@ figcaption {
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
+
+.number-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.number-text {
+  margin: 0 40px; /* Adjust the margin value to increase or decrease the gap */
+}
+
+.value {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
