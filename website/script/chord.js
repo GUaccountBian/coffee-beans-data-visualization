@@ -1046,7 +1046,7 @@ function createChordDiagram(matrix, labels) {
                 .style("opacity", 0.3);
         })
         .append("title")
-        .text((d, i) => `${labels[i]}: ${d.value.toLocaleString()}`);
+        .text((d, i) => `${labels[i]} has total ${d.value.toLocaleString()} coffee bean reviews`);
     // Draw the inner chords
     let ribbon = d3.ribbon().radius(innerRadius);
 
@@ -1079,7 +1079,7 @@ function createChordDiagram(matrix, labels) {
                 .style("opacity", 0.3);
         })
         .append("title")
-        .text(d => `${labels[d.source.index]} → ${labels[d.target.index]}: ${d.source.value.toLocaleString()}\n${labels[d.target.index]} → ${labels[d.source.index]}: ${d.target.value.toLocaleString()}`);
+        .text(d => `${labels[d.source.index]} and ${labels[d.target.index]} occur together in ${d.source.value.toLocaleString()} coffee bean reviews`);
 
     // Add labels to the arcs
     svg.append("g")
