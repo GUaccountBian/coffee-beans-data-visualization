@@ -16,7 +16,7 @@ body {
     position: relative;
     background-position: 50%;
     background-repeat: no-repeat;
-    height: 60vh; /* You can adjust this value based on your preferences */
+    height: 40vh; /* You can adjust this value based on your preferences */
     display: flex;
     justify-content: center;
     align-items: center;
