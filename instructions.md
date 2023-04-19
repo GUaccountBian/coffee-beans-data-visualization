@@ -59,18 +59,18 @@ for more inspiration.
 There are four major milestones. Click on each milestone for the
 specific instructions.
 
-1.  [**Dataset & topic proposal:**](#dataset-and-topic-proposal) you
+1. [**Dataset & topic proposal:**](#dataset-and-topic-proposal) you
     will propose dataset(s) to be used, the source, and the reason for
     using this dataset. You will also provide a short explanation of
     what you intend to do. The instructional team has the right to
     reject the dataset if it will not allow for a successful and
     comprehensive narrative.
-2.  [**Work-in-progress milestone:**](#work-in-progress-milesone) work
+2. [**Work-in-progress milestone:**](#work-in-progress-milesone) work
     in progress submission where most of the visualizations and
     narrative are developed in some form but not finalized.
-3.  [**Final milestone:**](#final-project-milestone) the interactive
+3. [**Final milestone:**](#final-project-milestone) the interactive
     narrative with all of its final components in a working website.
-4.  [**Poster presentation:**](#poster) the technical document that
+4. [**Poster presentation:**](#poster) the technical document that
     supports your narrative.
 
 ## Deliverable
