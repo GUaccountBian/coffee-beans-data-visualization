@@ -1024,30 +1024,55 @@ function createChordDiagram(matrix, labels) {
         .data(chord.groups)
         .join("path")
         .attr("d", arc)
-        .attr("fill", (d) => color(d.index))
-        .attr("stroke", (d) => d3.rgb(color(d.index)).darker())
+        .attr("fill", d => color(d.index))
+        .attr("stroke", d => d3.rgb(color(d.index)).darker())
+        .on("mouseover", (event, d) => {
+            // Highlight related chords and arcs
+            d3.selectAll(".ribbons path")
+                .filter(dd => dd.source.index !== d.index && dd.target.index !== d.index)
+                .transition()
+                .style("opacity", 0.1);
+        })
+        .on("mouseout", (event, d) => {
+            // Reset the opacity of chords
+            d3.selectAll(".ribbons path")
+                .transition()
+                .style("opacity", 1);
+        })
         .append("title")
         .text((d, i) => `${labels[i]}: ${d.value.toLocaleString()}`);
     // Draw the inner chords
     let ribbon = d3.ribbon().radius(innerRadius);
 
-    svg
-        .append("g")
+    // Draw the inner chords
+    svg.append("g")
         .attr("class", "ribbons")
         .selectAll("path")
         .data(chord)
         .join("path")
         .attr("d", ribbon)
-        .attr("fill", (d) => color(d.source.index))
-        .attr("stroke", (d) => d3.rgb(color(d.source.index)).darker())
+        .attr("fill", d => color(d.source.index))
+        .attr("stroke", d => d3.rgb(color(d.source.index)).darker())
+        .on("mouseover", (event, d) => {
+            // Highlight the selected chord
+            d3.select(event.currentTarget)
+                .transition()
+                .style("opacity", 1);
+
+            // Grey out unrelated chords
+            d3.selectAll(".ribbons path")
+                .filter(dd => dd !== d)
+                .transition()
+                .style("opacity", 0.1);
+        })
+        .on("mouseout", (event, d) => {
+            // Reset the opacity of all chords
+            d3.selectAll(".ribbons path")
+                .transition()
+                .style("opacity", 1);
+        })
         .append("title")
-        .text(
-            (d) =>
-                `${labels[d.source.index]} → ${labels[d.target.index]
-                }: ${d.source.value.toLocaleString()}\n${labels[d.target.index]
-                } → ${labels[d.source.index]
-                }: ${d.target.value.toLocaleString()}`
-        );
+        .text(d => `${labels[d.source.index]} → ${labels[d.target.index]}: ${d.source.value.toLocaleString()}\n${labels[d.target.index]} → ${labels[d.source.index]}: ${d.target.value.toLocaleString()}`);
 
     // Add labels to the arcs
     svg
