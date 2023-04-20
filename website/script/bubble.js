@@ -1,26 +1,26 @@
 // Replace this with your actual data
 var data = [
-    {id: "Mexico", total_cup_points: 81.67, x: 0.4, y: 0.482,plot_url:"./pages/plotly_plot0.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1920px-Flag_of_Mexico.svg.png"},
-    {id: "Colombia", total_cup_points: 83.33, x: 0.4, y: 0.6,plot_url:"./pages/plotly_plot1.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/1920px-Flag_of_Colombia.svg.png"},
-    {id: "Guatemala", total_cup_points: 82.41, x: 0.3, y: 0.7,plot_url:"./pages/plotly_plot2.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_Guatemala.svg/1920px-Flag_of_Guatemala.svg.png"},
-    {id: "Brazil", total_cup_points: 82.50, x: 0.5, y: 0.5,plot_url:"./pages/plotly_plot3.html",background_image_url:"https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1920px-Flag_of_Brazil.svg.png"},
-    {id: "China", total_cup_points: 82.08, x: 0.4, y: 0.6,plot_url:"./pages/plotly_plot4.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/1920px-Flag_of_the_People%27s_Republic_of_China.svg.png"},
-    {id: "Hawaii", total_cup_points: 83.17, x: 0.4542, y: 0.7087,plot_url:"./pages/plotly_plot5.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flag_of_Hawaii.svg/1920px-Flag_of_Hawaii.svg.png"},
-    {id: "Honduras", total_cup_points: 81.59, x:  0.5021, y: 0.6729,plot_url:"./pages/plotly_plot6.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/1920px-Flag_of_Honduras.svg.png"},
-    {id: "Costa Rica", total_cup_points: 83.18, x : 0.4321, y : 0.3195,plot_url:"./pages/plotly_plot7.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/1920px-Flag_of_Costa_Rica.svg.png"},
-    {id: "Ethiopia", total_cup_points: 85.46, x : 0.3956, y : 0.6498,plot_url:"./pages/plotly_plot8.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_Ethiopia.svg/1920px-Flag_of_Ethiopia.svg.png"},
-    {id: "Tanzania", total_cup_points: 82.34, x : 0.3379, y : 0.7423,plot_url:"./pages/plotly_plot9.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/1920px-Flag_of_Tanzania.svg.png"},
-    {id: "Uganda", total_cup_points: 83.97, x : 0.3565, y : 0.5287,plot_url:"./pages/plotly_plot10.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/1920px-Flag_of_Uganda.svg.png"},
-    {id: "Thailand", total_cup_points: 82.66, x : 0.5776, y : 0.5739,plot_url:"./pages/plotly_plot11.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/1920px-Flag_of_Thailand.svg.png"},
-    {id: "Nicaragua", total_cup_points: 80.96, x : 0.4348, y : 0.4191,plot_url:"./pages/plotly_plot12.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Nicaragua.svg/1920px-Flag_of_Nicaragua.svg.png"},
-    {id: "Kenya", total_cup_points: 84.49, x : 0.3491, y : 0.3865,plot_url:"./pages/plotly_plot13.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/1920px-Flag_of_Kenya.svg.png"},
-    {id: "El Salvador", total_cup_points: 83.34, x : 0.5612, y : 0.3812,plot_url:"./pages/plotly_plot14.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Flag_of_El_Salvador.svg/1920px-Flag_of_El_Salvador.svg.png"},
-    {id: "Indonesia", total_cup_points: 82.99, x : 0.4596, y : 0.5893,plot_url:"./pages/plotly_plot15.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/1920px-Flag_of_Indonesia.svg.png"},
-    {id: "India", total_cup_points: 81.84, x : 0.4798, y : 0.4869,plot_url:"./pages/plotly_plot16.html",background_image_url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1920px-Flag_of_India.svg.png"},
-    {id: "Malawi", total_cup_points: 81.83, x : 0.4284, y : 0.4954,plot_url:"./pages/plotly_plot17.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1920px-Flag_of_Malawi.svg.png"}
+    {id: "Mexico", total_cup_points: 81.67, x: 0.45, y: 0.482,plot_url:"./pages/plotly_plot0.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1920px-Flag_of_Mexico.svg.png"},
+    {id: "Colombia", total_cup_points: 83.33, x: 0.45, y: 0.6,plot_url:"./pages/plotly_plot1.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/1920px-Flag_of_Colombia.svg.png"},
+    {id: "Guatemala", total_cup_points: 82.41, x: 0.50, y: 0.7,plot_url:"./pages/plotly_plot2.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_Guatemala.svg/1920px-Flag_of_Guatemala.svg.png"},
+    {id: "Brazil", total_cup_points: 82.50, x: 0.55, y: 0.5,plot_url:"./pages/plotly_plot3.html",background_image_url:"https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1920px-Flag_of_Brazil.svg.png"},
+    {id: "China", total_cup_points: 82.08, x: 0.45, y: 0.6,plot_url:"./pages/plotly_plot4.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/1920px-Flag_of_the_People%27s_Republic_of_China.svg.png"},
+    {id: "Hawaii", total_cup_points: 83.17, x: 0.6042, y: 0.7087,plot_url:"./pages/plotly_plot5.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flag_of_Hawaii.svg/1920px-Flag_of_Hawaii.svg.png"},
+    {id: "Honduras", total_cup_points: 81.59, x:  0.5521, y: 0.6729,plot_url:"./pages/plotly_plot6.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/1920px-Flag_of_Honduras.svg.png"},
+    {id: "Costa Rica", total_cup_points: 83.18, x : 0.4821, y : 0.3195,plot_url:"./pages/plotly_plot7.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/1920px-Flag_of_Costa_Rica.svg.png"},
+    {id: "Ethiopia", total_cup_points: 85.46, x : 0.4356, y : 0.6498,plot_url:"./pages/plotly_plot8.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_Ethiopia.svg/1920px-Flag_of_Ethiopia.svg.png"},
+    {id: "Tanzania", total_cup_points: 82.34, x : 0.5079, y : 0.7423,plot_url:"./pages/plotly_plot9.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/1920px-Flag_of_Tanzania.svg.png"},
+    {id: "Uganda", total_cup_points: 83.97, x : 0.4065, y : 0.5287,plot_url:"./pages/plotly_plot10.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/1920px-Flag_of_Uganda.svg.png"},
+    {id: "Thailand", total_cup_points: 82.66, x : 0.6276, y : 0.5739,plot_url:"./pages/plotly_plot11.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/1920px-Flag_of_Thailand.svg.png"},
+    {id: "Nicaragua", total_cup_points: 80.96, x : 0.4848, y : 0.4191,plot_url:"./pages/plotly_plot12.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Nicaragua.svg/1920px-Flag_of_Nicaragua.svg.png"},
+    {id: "Kenya", total_cup_points: 84.49, x : 0.5191, y : 0.3865,plot_url:"./pages/plotly_plot13.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/1920px-Flag_of_Kenya.svg.png"},
+    {id: "El Salvador", total_cup_points: 83.34, x : 0.6112, y : 0.3812,plot_url:"./pages/plotly_plot14.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Flag_of_El_Salvador.svg/1920px-Flag_of_El_Salvador.svg.png"},
+    {id: "Indonesia", total_cup_points: 82.99, x : 0.5096, y : 0.5893,plot_url:"./pages/plotly_plot15.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/1920px-Flag_of_Indonesia.svg.png"},
+    {id: "India", total_cup_points: 81.84, x : 0.5298, y : 0.4869,plot_url:"./pages/plotly_plot16.html",background_image_url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1920px-Flag_of_India.svg.png"},
+    {id: "Malawi", total_cup_points: 81.83, x : 0.4784, y : 0.4954,plot_url:"./pages/plotly_plot17.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1920px-Flag_of_Malawi.svg.png"}
 ];
 
-var width = 800;
+var width = 1000;
 var height = 600;
 var svg = d3.select("#bubble_chart")
     .attr("width", width)

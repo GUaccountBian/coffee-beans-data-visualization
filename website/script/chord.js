@@ -986,7 +986,7 @@ function processData(data) {
 
 function createChordDiagram(matrix, labels) {
     // Set the dimensions of the diagram
-    let width = 800;
+    let width = 1000;
     let height = 600;
     let outerRadius = Math.min(width, height) * 0.5 - 40;
     let innerRadius = outerRadius - 30;
