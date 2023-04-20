@@ -221,21 +221,28 @@ figcaption {
 /* Show the dropdown menu when the user clicks on the dropdown button */
 .dropdown:hover .dropdown-content {
   display: block;
+  flex-wrap: nowrap;
+  text-align: center;
+  border-radius: 2%;
 }
 
 /* Style the links inside the dropdown */
 .dropdown-content a {
-  color: #333;
+  color: #F3EFE6;
+  background-color: #6C503D;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   cursor: pointer;
-  border: 1px solid #5C3B21;
+  border-radius: 2%;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  flex-wrap: nowrap;
+  text-align: center;
+  border-radius: 2%;
 }
 
 .number-container {
