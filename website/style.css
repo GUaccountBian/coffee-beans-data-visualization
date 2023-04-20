@@ -62,7 +62,7 @@ body {
   
   /* Main content styles */
   main {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -255,4 +255,12 @@ figcaption {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+}
+
+#map_line {
+  display: block;
+  width: 130%;
+  height: 600px;
+  margin-left: -15%;
+  position: relative;
 }
