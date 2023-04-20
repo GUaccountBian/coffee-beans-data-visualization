@@ -1,155 +1,168 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee Visualization Portfolio</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
 
-  <nav>
-    <li><a href="./index.html">Coffee Bean Visualization</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropbtn">Data &#9662;</a>
-      <div class="dropdown-content">
-        <a
-          href="https://ourworldindata.org/grapher/coffee-bean-production?tab=table&time=earliest..2020"
-          >Production of coffee in the world</a
-        >
-        <a
-          href="https://www.kaggle.com/datasets/volpatto/coffee-quality-database-from-cqi"
-          >Coffee Beans Favor</a
-        >
-        <a
-          href="https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset?resource=download"
-          >Coffee Reviews</a
-        >
-      </div>
-    </li>
-    <li><a href="./pages/method.html">Method</a></li>
-    <li>
-      <a
-        href="https://github.com/anly503/spring2023-project-team-07"
-        target="blank"
-        >Code</a
-      >
-    </li>
-    <li><a href="">Authors</a></li>
-  </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Visualization Portfolio</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-  <header>
-    <div class="header-content">
-      <h1>The Art of Beans: Unveiling Coffee Sales and Flavors</h1>
-      <h2>
-        A Comprehensive Analysis of Coffee Bean Sales and Popular Tastes Across
-        the Globe
-      </h2>
-      <p>Group7: Jinsheng Luo, Yihan Bian, Chang Xie</p>
+<nav>
+  <li><a href="./index.html">Coffee Bean Visualization</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Data &#9662;</a>
+    <div class="dropdown-content">
+      <a href="https://ourworldindata.org/grapher/coffee-bean-production?tab=table&time=earliest..2020">Production of
+        coffee in the world</a>
+      <a href="https://www.kaggle.com/datasets/volpatto/coffee-quality-database-from-cqi">Coffee Beans Favor</a>
+      <a href="https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset?resource=download">Coffee Reviews</a>
     </div>
-  </header>
+  </li>
+  <li><a href="./pages/method.html">Method</a></li>
+  <li>
+    <a href="https://github.com/anly503/spring2023-project-team-07" target="blank">Code</a>
+  </li>
+  <li><a href="">Authors</a></li>
+</nav>
 
-  <body>
-    <main>
-      <section>
-        <h2>Introduction</h2>
-        <p>
-          Welcome to our Coffee Explorer, a captivating journey into the world
-          of coffee! As one of the most cherished beverages worldwide, coffee
-          has a rich history and diverse appeal. Our goal is to offer valuable
-          insights into coffee beans, their origins, and the varied preferences
-          of coffee enthusiasts across the globe. By analyzing production data
-          and quality attributes, we aim to satisfy the curiosity of casual
-          drinkers and connoisseurs alike. Embark on this fascinating voyage to
-          discover coffee trends, regional preferences, and the characteristics
-          that make each coffee bean unique. Learn about sustainable practices
-          and challenges facing the coffee industry to appreciate not only the
-          taste but also the story behind every cup.
-        </p>
-        <div class="number-container">
-          <div class="number-text">
-            <span class="value">123</span>
-            <p>Coffee Bean Sales</p>
-          </div>
-          <div class="number-text">
-            <span class="value">456</span>
-            <p>Coffee Sales</p>
-          </div>
-          <div class="number-text">
-            <span class="value">789</span>
-            <p>Country of Origin</p>
-          </div>
+<header>
+  <div class="header-content">
+    <h1>The Art of Beans: Unveiling Coffee Sales and Flavors</h1>
+    <h2>
+      A Comprehensive Analysis of Coffee Bean Sales and Popular Tastes Across
+      the Globe
+    </h2>
+    <p>Group7: Jinsheng Luo, Yihan Bian, Chang Xie</p>
+  </div>
+</header>
+
+<body>
+  <main>
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Welcome to our Coffee Explorer, a captivating journey into the world
+        of coffee! As one of the most cherished beverages worldwide, coffee
+        has a rich history and diverse appeal. Our goal is to offer valuable
+        insights into coffee beans, their origins, and the varied preferences
+        of coffee enthusiasts across the globe. By analyzing production data
+        and quality attributes, we aim to satisfy the curiosity of casual
+        drinkers and connoisseurs alike. Embark on this fascinating voyage to
+        discover coffee trends, regional preferences, and the characteristics
+        that make each coffee bean unique. Learn about sustainable practices
+        and challenges facing the coffee industry to appreciate not only the
+        taste but also the story behind every cup.
+      </p>
+      <div class="number-container">
+        <div class="number-text">
+          <span class="value">123</span>
+          <p>Coffee Bean Sales</p>
         </div>
-        <script src="./script/numberincrease.js"></script>
-        <p>Insert here.</p>
-      </section>
+        <div class="number-text">
+          <span class="value">456</span>
+          <p>Coffee Sales</p>
+        </div>
+        <div class="number-text">
+          <span class="value">789</span>
+          <p>Country of Origin</p>
+        </div>
+      </div>
+      <script src="./script/numberincrease.js"></script>
+      <p>Insert here.</p>
+    </section>
 
-      <section>
-        <h2>Motivation</h2>
-        <p>Insert here.</p>
-      </section>
+    <section>
+      <h2>Motivation</h2>
+      <p>Insert here.</p>
+    </section>
 
-      <section>
-        <h2>Coffee Tasting Profiles of Selected Countries</h2>
-        <svg id="bubble_chart"></svg>
-        <figcaption style="text-align: left">
-          <b>Figure 3</b>: Shows information about different countries' coffee
-          quality based on their total cup points(calculated by summing all
-          favor tasting measurement)
-        </figcaption>
-        <div id="tooltip" class="tooltip" style="display: none"></div>
-        <object
-          id="plotly_object"
-          data="./pages/plotly_plot0.html"
-          type="text/html"
-          width="100%"
-          height="410px"
-          style="margin-top: 30px"
-        ></object>
 
-        <script src="./script/bubble.js"></script>
-        <figcaption style="text-align: left">
-          <b>Figure 4</b>: The radar plot is used to explore the flavor profile
-          of different coffee varieties . The area indicates the overall
-          intensity of the flavor.
-        </figcaption>
-        <p>
-          Coffee is one of the most popular drinks in the world, with millions
-          of people enjoying it daily. However, the flavor of coffee can vary
-          widely depending on where it's grown and how it's roasted. To
-          understand the complexity of coffee flavor profiles, we turned to data
-          from a global coffee tasting competition. By analyzing this data, we
-          were able to identify the countries that produce the highest-rated
-          coffees, as well as the flavor attributes that make them stand out.
-          Our interactive bubble plot shows the top coffee-producing countries,
-          with the size of the bubbles representing average rating of their
-          coffees. We can see that Ethiopia, Uganda, and Kenya are the
-          highest-rated coffee producers.
-        </p>
+    <object class="center" data="./pages/map_line.html" type="text/html" width="1000px" height="600px"></object>
+    <figcaption style="text-align: left;">
+      <b>Figure 1 & Figure 2</b>: Interactive plots showcasing coffee production across different continents and countries over
+      several decades. The choropleth map highlights the dominance of Brazil in global coffee production.
+      The line plots provide a more detailed view of production trends for specific regions,
+      highlighting the complexities of coffee production across different continents.
+    </figcaption>
+    <p>
+      The interactive plots above showcase the production of coffee across different continents and countries over a
+      span of several decades. While coffee is grown in various parts of the world, these visualizations reveal that
+      certain regions have emerged as leaders in coffee production.
 
-        <p>
-          To further understand what makes these coffees stand out, we used a
-          radar plot to visualize their flavor attributes, such as acidity,
-          sweetness, and body. We can see that Ethiopian coffees have high
-          acidity, while Colombian coffees have a balanced flavor profile with
-          moderate levels of all attributes. By combining these visualizations,
-          we can gain a deeper appreciation for the complexity of coffee flavor
-          and the important role that geography plays in shaping it.
-        </p>
-      </section>
-      <section>
-        <object
-          id="plotly_object"
-          data="./pages/chord.html"
-          type="text/html"
-          width="100%"
-          height="800px"
-          style="margin-top: 30px"
-        ></object>
-        <figcaption style="text-align: left">
-          <b>Figure 5</b>: Insert here
-        </figcaption>
-      </section>
-    </main>
-  </body>
+      One striking finding from the choropleth map is the dominance of Brazil in global coffee production. The map
+      highlights how Brazil's coffee production has steadily grown over the years, and how it now accounts for a
+      significant proportion of the world's coffee supply. Moreover, the map also shows the emergence of other
+      countries
+      such as Vietnam, which has risen to become the second-largest coffee producer in the world. By providing a
+      visual
+      representation of coffee production at a global level, these visualizations underscore the significance of these
+      countries in meeting the world's demand for coffee.
+
+      The line plots provide additional insights into coffee production at a more granular level. By allowing viewers
+      to
+      explore production trends for specific countries and continents over time, these plots highlight the
+      complexities
+      of coffee production and how it varies across different regions. For instance, the line plot for Africa reveals
+      that coffee production in this region has remained relatively flat over the years, while the line plot for Asia
+      shows a more erratic trend with periods of rapid growth followed by declines in production.
+
+      Overall, the interactive plots demonstrate the importance of coffee as a global commodity and highlight the key
+      players in the coffee production industry. By enabling viewers to explore coffee production data in an engaging
+      and interactive way, these visualizations provide valuable insights into the forces that shape coffee production
+      and consumption around the world.
+    </p>
+    <section>
+      <h2>Coffee Tasting Profiles of Selected Countries</h2>
+      <svg id="bubble_chart"></svg>
+      <figcaption style="text-align: left">
+        <b>Figure 3</b>: Shows information about different countries' coffee
+        quality based on their total cup points(calculated by summing all
+        favor tasting measurement)
+      </figcaption>
+      <div id="tooltip" class="tooltip" style="display: none"></div>
+      <object id="plotly_object" data="./pages/plotly_plot0.html" type="text/html" width="100%" height="410px"
+        style="margin-top: 30px"></object>
+
+      <script src="./script/bubble.js"></script>
+      <figcaption style="text-align: left">
+        <b>Figure 4</b>: The radar plot is used to explore the flavor profile
+        of different coffee varieties . The area indicates the overall
+        intensity of the flavor.
+      </figcaption>
+      <p>
+        Coffee is one of the most popular drinks in the world, with millions
+        of people enjoying it daily. However, the flavor of coffee can vary
+        widely depending on where it's grown and how it's roasted. To
+        understand the complexity of coffee flavor profiles, we turned to data
+        from a global coffee tasting competition. By analyzing this data, we
+        were able to identify the countries that produce the highest-rated
+        coffees, as well as the flavor attributes that make them stand out.
+        Our interactive bubble plot shows the top coffee-producing countries,
+        with the size of the bubbles representing average rating of their
+        coffees. We can see that Ethiopia, Uganda, and Kenya are the
+        highest-rated coffee producers.
+      </p>
+
+      <p>
+        To further understand what makes these coffees stand out, we used a
+        radar plot to visualize their flavor attributes, such as acidity,
+        sweetness, and body. We can see that Ethiopian coffees have high
+        acidity, while Colombian coffees have a balanced flavor profile with
+        moderate levels of all attributes. By combining these visualizations,
+        we can gain a deeper appreciation for the complexity of coffee flavor
+        and the important role that geography plays in shaping it.
+      </p>
+    </section>
+    <section>
+      <object id="plotly_object" data="./pages/chord.html" type="text/html" width="100%" height="800px"
+        style="margin-top: 30px"></object>
+      <figcaption style="text-align: left">
+        <b>Figure 5</b>: Insert here
+      </figcaption>
+    </section>
+  </main>
+</body>
+
 </html>
