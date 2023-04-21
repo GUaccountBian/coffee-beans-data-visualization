@@ -70,11 +70,23 @@
     <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
         <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
-                <h2 class="display-5">Insert here</h2>
+                <h2 class="display-5">Coffee Bean Varieties and Related Countries</h2>
                 <p class="lead">Figure 5
                 </p>
 
-                <p style="text-align:left">Insert here</p>
+                <p style="text-align:left">For Figure 5, it creates an interactive chord diagram to visualizerelationships between different countries and 
+                coffee varieties based on their total coffee bean reviews. The diagram is constructed using the D3.js library, enabling dynamic and interactive
+                data visualization.</p>
+                <p style="text-align:left">The data is parsed, and unique countries and varieties are extracted. A matrix is initialized and filled with the number
+                of occurrences of a country-variety pair. The "createChordDiagram" function is called with the populated matrix and the combined list of countries
+                andvarieties as labels. In this function, dimensions and radius for the diagram are set. The chord layout is established with specified padding and
+                sorting. A color scale is also created to visually distinguish data categories.</p>
+                <p style="text-align:left">An SVG container is appended to the webpage, and outer arcs representing countries and varieties are drawn. Interactive 
+                features are added in the diagram, such as highlighting related chords and arcs on mouseover events. Labels are also attached to the arcs for easy
+                identification.</p>
+                <p style="text-align:left">The inner chordsm signifying the relationships between countries and varieties, are drawn with the D3 ribbon generator.
+                These chords respond to mouseover events by highlighting the selected chord and dimming unrelated chords, allowing uers to focues on the 
+                relationship of interest.</p>
 
             </div>
         </div>
