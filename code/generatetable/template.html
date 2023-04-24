@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <!-- DataTables Buttons -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<!-- DataTables Responsive -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<!-- DataTables FixedHeader -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.2/css/fixedHeader.dataTables.min.css">
+<script src="https://cdn.datatables.net/fixedheader/3.2.2/js/dataTables.fixedHeader.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Data Table</title>
+  <style>
+    /* Custom CSS goes here */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    table.display {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    table.display thead tr th {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+    }
+    table.display tbody tr td {
+      padding: 8px;
+    }
+    table.display tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    table.display tbody tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+  
+</head>
+<body>
+
+    <script>
+        $(document).ready(function() {
+          $('.display').DataTable({
+            responsive: true, // Enable responsive features
+            fixedHeader: true, // Enable fixed header
+            dom: 'Bfrtip', // Add buttons and other elements to the table layout
+            buttons: [
+              {
+                extend: 'csvHtml5',
+                exportOptions: {
+                  columns: ':visible'
+                }
+              },
+              {
+                extend: 'excelHtml5',
+                exportOptions: {
+                  columns: ':visible'
+                }
+              },
+              {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                  columns: ':visible'
+                }
+              },
+              'colvis' // Column visibility toggle button
+            ],
+            columnDefs: [{ // Hide certain columns by default
+              targets: [], // Add column indices to hide by default
+              visible: false
+            }]
+          });
+        });
+      </script>
+      
+
+<!-- Include the generated HTML table -->
+{% include "table.html" %}
+
+</body>
+</html>
