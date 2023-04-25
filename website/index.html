@@ -14,10 +14,22 @@
   <li class="dropdown">
     <a href="#" class="dropbtn">Data &#9662;</a>
     <div class="dropdown-content">
-      <a href="https://ourworldindata.org/grapher/coffee-bean-production?tab=table&time=earliest..2020">Production of
-        coffee in the world</a>
-      <a href="https://www.kaggle.com/datasets/volpatto/coffee-quality-database-from-cqi">Coffee Beans Favor</a>
-      <a href="https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset?resource=download">Coffee Reviews</a>
+      <div class="dropdown-row">
+        <a href="https://ourworldindata.org/grapher/coffee-bean-production?tab=table&time=earliest..2020"
+          class="data-source-link" target="blank">Production of
+          coffee in the world</a>
+        <a href="../code/generatetable/production_table.html" class="data-table-link" target="blank">Production Table</a>
+      </div>
+      <div class="dropdown-row">
+        <a href="https://www.kaggle.com/datasets/volpatto/coffee-quality-database-from-cqi" class="data-source-link"
+          target="blank">Coffee Beans Favor</a>
+        <a href="../code/generatetable/bean_table.html" class="data-table-link" target="blank">Bean Table</a>
+      </div>
+      <div class="dropdown-row">
+        <a href="https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset?resource=download"
+          class="data-source-link" target="blank">Coffee Reviews</a>
+        <a href="../code/generatetable/review_table.html" class="data-table-link" target="blank">Reviews Table</a>
+      </div>
     </div>
   </li>
   <li><a href="./pages/method.html">Method</a></li>
@@ -51,7 +63,7 @@
         and quality attributes, we aim to satisfy the curiosity of casual
         drinkers and connoisseurs alike. Embark on this fascinating voyage to
         discover coffee trends, regional preferences, and the characteristics
-        that make each coffee bean unique. If you can, prepare a cup of coffee. 
+        that make each coffee bean unique. If you can, prepare a cup of coffee.
         Let's get started!
       </p>
     </section>
@@ -72,7 +84,8 @@
       <object id="map_line" data="./pages/map_line.html" type="text/html"></object>
       <figcaption style="text-align: left;">
         <b>Figure 1 & Figure 2</b>: Interactive plots showcasing coffee production across different continents and
-        countries over several decades. The choropleth map highlights the dominance of Brazil in global coffee production.
+        countries over several decades. The choropleth map highlights the dominance of Brazil in global coffee
+        production.
         The line plots provide a more detailed view of production trends for specific regions,
         highlighting the complexities of coffee production across different continents.
       </figcaption>
@@ -80,19 +93,24 @@
         The interactive plots above showcase the production of coffee across different continents and countries over a
         span of several decades. While coffee is grown in various parts of the world, these visualizations reveal that
         certain regions have emerged as leaders in coffee production.
-  
+
         One striking finding from the choropleth map is the dominance of Brazil in global coffee production. The map
         highlights how Brazil's coffee production has steadily grown over the years, and how it now accounts for a
         significant proportion of the world's coffee supply. Moreover, the map also shows the emergence of other
-        countries such as Vietnam, which has risen to become the second-largest coffee producer in the world. By providing a
-        visual representation of coffee production at a global level, these visualizations underscore the significance of these
+        countries such as Vietnam, which has risen to become the second-largest coffee producer in the world. By
+        providing a
+        visual representation of coffee production at a global level, these visualizations underscore the significance
+        of these
         countries in meeting the world's demand for coffee.
-  
+
         The line plots provide additional insights into coffee production at a more granular level. By allowing viewers
         to explore production trends for specific countries and continents over time, these plots highlight the
-        complexities of coffee production and how it varies across different regions. For instance, the line plot for Asia reveals that
-        coffee production in this region has remained relatively flat over the years, while the line plot for Africa shows
-        a more erratic trend with periods of rapid growth followed by declines in production. Europe has produced very few
+        complexities of coffee production and how it varies across different regions. For instance, the line plot for
+        Asia reveals that
+        coffee production in this region has remained relatively flat over the years, while the line plot for Africa
+        shows
+        a more erratic trend with periods of rapid growth followed by declines in production. Europe has produced very
+        few
         coffee beans because most European coffee beans are imported。 Overall, the interactive plots demonstrate the
         importance of coffee as a global commodity and highlight the key players in the coffee production industry. By
         enabling viewers to explore coffee production data in an engaging and interactive way, these visualizations
@@ -100,13 +118,13 @@
       </p>
 
       <p>
-        We learned about the amount of coffee beans produced around the world. Millions of people enjoying it daily. 
-        However, the flavor of coffee can vary widely depending on where it's grown and how it's roasted. 
-        Sometimes, you may find some coffees too acidic or too dark. 
+        We learned about the amount of coffee beans produced around the world. Millions of people enjoying it daily.
+        However, the flavor of coffee can vary widely depending on where it's grown and how it's roasted.
+        Sometimes, you may find some coffees too acidic or too dark.
         Would you like to know which kind you are favored? Enjoy the rest of coffee journey!
       </p>
     </section>
-  
+
     <section>
       <h2>Coffee Tasting Profiles of Selected Countries</h2>
       <svg id="bubble_chart"></svg>
@@ -125,7 +143,7 @@
         of different coffee varieties . The area indicates the overall
         intensity of the flavor.
       </figcaption>
-      <p>       
+      <p>
         To understand the complexity of coffee flavor profiles, we turned to data
         from a global coffee tasting competition. By analyzing this data, we
         were able to identify the countries that produce the highest-rated
@@ -141,16 +159,21 @@
         radar plot to visualize their flavor attributes, such as acidity,
         sweetness, and body. We can see that Ethiopian coffees have high
         acidity, while Colombian coffees have a balanced flavor profile with
-        moderate levels of all attributes. Now, if you like acidic, you know what country of coffee bean you need to buy.
-        If you are a first time coffee drinker, I suggest you drink coffee made from Colombian coffee beans. You can't go wrong that way.
+        moderate levels of all attributes. Now, if you like acidic, you know what country of coffee bean you need to
+        buy.
+        If you are a first time coffee drinker, I suggest you drink coffee made from Colombian coffee beans. You can't
+        go wrong that way.
         By combining these visualizations,we can gain a deeper appreciation for the complexity of coffee flavor
         and the important role that geography plays in shaping it.
       </p>
 
       <p>
-        You learn about the relationship of coffee bean favor and geography, right? Next step for you is to choose which one to try.
-        It could be overwhelming for you. Before, the way you choose coffee bean in the market is to see which package of coffee bean looks better :).
-        I will help you to know the relationship between countries and the varieties of coffee beans they produce. Feel excited? <b>Keep reading! </b>
+        You learn about the relationship of coffee bean favor and geography, right? Next step for you is to choose which
+        one to try.
+        It could be overwhelming for you. Before, the way you choose coffee bean in the market is to see which package
+        of coffee bean looks better :).
+        I will help you to know the relationship between countries and the varieties of coffee beans they produce. Feel
+        excited? <b>Keep reading! </b>
       </p>
     </section>
 
@@ -161,36 +184,49 @@
         style="margin-top: 30px"></object>
       <figcaption style="text-align: left">
         <b>Figure 5</b>: The interactive chord diagram offers a fascinating lens to explore the intriguing relationships
-        between coffee varieties and their countries of origin. This captivating representation waves vast swaths of information
-        together, and transforming raw data into a visual narrative that invites the viewer on an enthralling journey through 
+        between coffee varieties and their countries of origin. This captivating representation waves vast swaths of
+        information
+        together, and transforming raw data into a visual narrative that invites the viewer on an enthralling journey
+        through
         the world of coffee.
       </figcaption>
       <p>
-        This visualization built upon a foundation of coffee bean reviews, provides a visual representation of 
-        the relationship between countries and the varieties of coffee beans they produce. 
-        By using this diagram, coffee lovers can easily identify which countries produce the types of coffee beans they enjoy and 
-        discover new varieties they may not have tried before.By hovering over a specific arc unveils the corresponding connections, 
+        This visualization built upon a foundation of coffee bean reviews, provides a visual representation of
+        the relationship between countries and the varieties of coffee beans they produce.
+        By using this diagram, coffee lovers can easily identify which countries produce the types of coffee beans they
+        enjoy and
+        discover new varieties they may not have tried before.By hovering over a specific arc unveils the corresponding
+        connections,
         shedding light on the magnitude of each country's contribution to the global coffee production.
       </p>
       <p>
-        As you can see, Typica, Caturra and Bourbon have associated with many countries. FYI, they are all from the species of Arabica.
-        Arabica is a type of coffee bean that is widely considered to be one of the highest quality and most flavorful varieties of coffee.
-        Now, you know what kinds of coffee bean you want. Next time, you go to the market,take a closer look at the label and make sure the coffee 
-        you're buying matches the characteristics of the coffee bean you're looking for. 
-        Additionally, don't be afraid to try new varieties and experiment with different brewing methods to fully experience the unique flavors and 
-        aromas of each type of coffee bean. 
+        As you can see, Typica, Caturra and Bourbon have associated with many countries. FYI, they are all from the
+        species of Arabica.
+        Arabica is a type of coffee bean that is widely considered to be one of the highest quality and most flavorful
+        varieties of coffee.
+        Now, you know what kinds of coffee bean you want. Next time, you go to the market,take a closer look at the
+        label and make sure the coffee
+        you're buying matches the characteristics of the coffee bean you're looking for.
+        Additionally, don't be afraid to try new varieties and experiment with different brewing methods to fully
+        experience the unique flavors and
+        aromas of each type of coffee bean.
         Happy coffee drinking!(My favorite is Hawaiian Kona)
       </p>
-    <section>
-      <h2>Conclusion</h2>
-      <p>
-        Are you done with your coffee yet? Analyzing and visualizing coffee beans in such a beautiful way is very exciting for us.
-        The purpose of this project is to help you better understand the coffee you are drinking. It provides a step-by-step analysis.
-        Starting from the origin of the coffee beans, their roasting level, to the flavor notes and aroma profile, all of which can greatly affect your overall coffee drinking experience. 
-        By taking the time to appreciate and understand the complexities of coffee, we hope to help you develop a deeper appreciation for this beloved beverage and all the hard work that goes into producing it. 
-        So, the next time you're enjoying a cup of coffee, take a moment to think about its origin and unique characteristics, and savor each sip.
-      </p>
-    </section>
+      <section>
+        <h2>Conclusion</h2>
+        <p>
+          Are you done with your coffee yet? Analyzing and visualizing coffee beans in such a beautiful way is very
+          exciting for us.
+          The purpose of this project is to help you better understand the coffee you are drinking. It provides a
+          step-by-step analysis.
+          Starting from the origin of the coffee beans, their roasting level, to the flavor notes and aroma profile, all
+          of which can greatly affect your overall coffee drinking experience.
+          By taking the time to appreciate and understand the complexities of coffee, we hope to help you develop a
+          deeper appreciation for this beloved beverage and all the hard work that goes into producing it.
+          So, the next time you're enjoying a cup of coffee, take a moment to think about its origin and unique
+          characteristics, and savor each sip.
+        </p>
+      </section>
 
       </figcaption>
     </section>
