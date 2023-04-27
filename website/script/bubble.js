@@ -20,8 +20,8 @@ var data = [
     {id: "Malawi", total_cup_points: 81.83, x : 0.4784, y : 0.4954,plot_url:"./pages/plotly_plot17.html",background_image_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1920px-Flag_of_Malawi.svg.png"}
 ];
 
-var width = 1000;
-var height = 600;
+var width = 500;
+var height = 500;
 var svg = d3.select("#bubble_chart")
     .attr("width", width)
     .attr("height", height);

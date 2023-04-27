@@ -307,3 +307,14 @@ figcaption {
   margin-left: -15%;
   position: relative;
 }
+
+.figure-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.figure-item {
+  flex: 1;
+  margin: 0 10px;
+}

@@ -18,7 +18,8 @@
         <a href="https://ourworldindata.org/grapher/coffee-bean-production?tab=table&time=earliest..2020"
           class="data-source-link" target="blank">Production of
           coffee in the world</a>
-        <a href="../code/generatetable/production_table.html" class="data-table-link" target="blank">Production Table</a>
+        <a href="../code/generatetable/production_table.html" class="data-table-link" target="blank">Production
+          Table</a>
       </div>
       <div class="dropdown-row">
         <a href="https://www.kaggle.com/datasets/volpatto/coffee-quality-database-from-cqi" class="data-source-link"
@@ -53,7 +54,7 @@
 <body>
   <main>
     <section>
-      <h2>Introduction</h2>
+      <h2>Embarking on a Coffee Adventure: An Introduction to Our Journey</h2>
       <p>
         Welcome to our Coffee Explorer, a captivating journey into the world
         of coffee! As one of the most cherished beverages worldwide, coffee
@@ -69,7 +70,7 @@
     </section>
 
     <section>
-      <h2>Exploring the Fascinating World of Coffee Bean Production</h2>
+      <h2>Unearthing the Global Landscape of Coffee Production</h2>
       <div class="number-container">
         <div class="number-text">
           <span class="value">781135081</span>
@@ -81,6 +82,11 @@
         </div>
       </div>
       <script src="./script/numberincrease.js"></script>
+      <p>
+        The interactive plots showcase the production of coffee across different continents and countries over a
+        span of several decades. While coffee is grown in various parts of the world, these visualizations reveal that
+        certain regions have emerged as leaders in coffee production.
+      </p>
       <object id="map_line" data="./pages/map_line.html" type="text/html"></object>
       <figcaption style="text-align: left;">
         <b>Figure 1 & Figure 2</b>: Interactive plots showcasing coffee production across different continents and
@@ -90,28 +96,23 @@
         highlighting the complexities of coffee production across different continents.
       </figcaption>
       <p>
-        The interactive plots above showcase the production of coffee across different continents and countries over a
-        span of several decades. While coffee is grown in various parts of the world, these visualizations reveal that
-        certain regions have emerged as leaders in coffee production.
-
         One striking finding from the choropleth map is the dominance of Brazil in global coffee production. The map
         highlights how Brazil's coffee production has steadily grown over the years, and how it now accounts for a
         significant proportion of the world's coffee supply. Moreover, the map also shows the emergence of other
         countries such as Vietnam, which has risen to become the second-largest coffee producer in the world. By
-        providing a
-        visual representation of coffee production at a global level, these visualizations underscore the significance
-        of these
-        countries in meeting the world's demand for coffee.
-
+        providing a visual representation of coffee production at a global level, these visualizations underscore the
+        significance
+        of these countries in meeting the world's demand for coffee.
+      </p>
+      <p>
         The line plots provide additional insights into coffee production at a more granular level. By allowing viewers
         to explore production trends for specific countries and continents over time, these plots highlight the
         complexities of coffee production and how it varies across different regions. For instance, the line plot for
-        Asia reveals that
-        coffee production in this region has remained relatively flat over the years, while the line plot for Africa
-        shows
-        a more erratic trend with periods of rapid growth followed by declines in production. Europe has produced very
-        few
-        coffee beans because most European coffee beans are imported。 Overall, the interactive plots demonstrate the
+        Asia reveals that coffee production in this region has remained relatively flat over the years, while the line
+        plot for Africa
+        shows a more erratic trend with periods of rapid growth followed by declines in production. Europe has produced
+        very
+        few coffee beans because most European coffee beans are imported。 Overall, the interactive plots demonstrate the
         importance of coffee as a global commodity and highlight the key players in the coffee production industry. By
         enabling viewers to explore coffee production data in an engaging and interactive way, these visualizations
         provide valuable insights into the forces that shape coffee production and consumption around the world.
@@ -126,23 +127,7 @@
     </section>
 
     <section>
-      <h2>Coffee Tasting Profiles of Selected Countries</h2>
-      <svg id="bubble_chart"></svg>
-      <figcaption style="text-align: left">
-        <b>Figure 3</b>: Shows information about different countries' coffee
-        quality based on their total cup points(calculated by summing all
-        favor tasting measurement)
-      </figcaption>
-      <div id="tooltip" class="tooltip" style="display: none"></div>
-      <object id="plotly_object" data="./pages/plotly_plot0.html" type="text/html" width="100%" height="410px"
-        style="margin-top: 30px"></object>
-
-      <script src="./script/bubble.js"></script>
-      <figcaption style="text-align: left">
-        <b>Figure 4</b>: The radar plot is used to explore the flavor profile
-        of different coffee varieties . The area indicates the overall
-        intensity of the flavor.
-      </figcaption>
+      <h2>A Flavor Expedition: Delving into the Coffee Tasting Profiles of Leading Countries</h2>
       <p>
         To understand the complexity of coffee flavor profiles, we turned to data
         from a global coffee tasting competition. By analyzing this data, we
@@ -153,6 +138,28 @@
         coffees. We can see that Ethiopia, Uganda, and Kenya are the
         highest-rated coffee producers.
       </p>
+      <div class="figure-container">
+        <div class="figure-item">
+          <svg id="bubble_chart"></svg>
+          <figcaption style="text-align: left">
+            <b>Figure 3</b>: Shows information about different countries' coffee
+            quality based on their total cup points (calculated by summing all
+            favor tasting measurement)
+          </figcaption>
+        </div>
+      
+        <div class="figure-item">
+          <object id="plotly_object" data="./pages/plotly_plot0.html" type="text/html" width="100%" height="450px"
+            style="margin-top: 50px"></object>
+          <figcaption style="text-align: left">
+            <b>Figure 4</b>: The radar plot is used to explore the flavor profile
+            of different coffee varieties. The area indicates the overall
+            intensity of the flavor.
+          </figcaption>
+        </div>
+      </div>
+      <script src="./script/bubble.js"></script>
+
 
       <p>
         To further understand what makes these coffees stand out, we used a
@@ -179,7 +186,7 @@
 
 
     <section>
-      <h2>Exploring the intriguing relationships between coffee varieties and their countries of origin</h2>
+      <h2>Cultivating Connections: The Intricate Links between Coffee Varieties and Their Countries of Origin</h2>
       <object id="plotly_object" data="./pages/chord.html" type="text/html" width="100%" height="800px"
         style="margin-top: 30px"></object>
       <figcaption style="text-align: left">
@@ -213,7 +220,7 @@
         Happy coffee drinking!(My favorite is Hawaiian Kona)
       </p>
       <section>
-        <h2>Conclusion</h2>
+        <h2>Savoring the Experience: Reflecting on Our Coffee Exploration and Discoveries</h2>
         <p>
           Are you done with your coffee yet? Analyzing and visualizing coffee beans in such a beautiful way is very
           exciting for us.
