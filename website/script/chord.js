@@ -1002,7 +1002,7 @@ function createChordDiagram(matrix, labels, countries, varieties) {
     let countryColor = d3
         .scaleLinear()
         .domain([0, countries.length - 1])
-        .range([d3.rgb("#33cc33"), d3.rgb("#006600")])
+        .range([d3.rgb("#CAFAEC"), d3.rgb("#A1FABB")])
         .interpolate(d3.interpolateRgb);
 
     let varietyColor = d3
