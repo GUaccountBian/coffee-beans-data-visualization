@@ -4,10 +4,20 @@
   src: url('./sodo-sans-7.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'SoDo Sans Regular';
+  src: url('./sodo-sans-8.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SoDo Sans Bold';
+  src: url('./sodo-sans-3.otf') format('opentype');
+}
+
 body {
     background-color: #F3EFE6;
     color: #5C3B21;
-    font-family: 'SoDo Sans Light Italic', sans-serif;
+    font-family: 'SoDo Sans Regular', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
@@ -30,7 +40,17 @@ body {
   }
   
   header h1, header h2 {
+    font-family: 'SoDo Sans Bold', sans-serif;
     width: 100%;
+  }
+  
+  body h2 {
+    font-family: 'SoDo Sans Bold', sans-serif;
+    font-size: x-large;
+  }
+
+  body figcaption {
+    font-family: 'SoDo Sans Light Italic', sans-serif;
   }
 
   .header-content {
