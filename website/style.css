@@ -39,18 +39,26 @@ body {
     padding: 2rem;
   }
   
-  header h1, header h2 {
+  header h1{
     font-family: 'SoDo Sans Bold', sans-serif;
+    font-size: 32px;
+    width: 100%;
+  }
+
+  header h2 {
+    font-family: 'SoDo Sans Bold', sans-serif;
+    font-size: 48px;
     width: 100%;
   }
   
   body h2 {
     font-family: 'SoDo Sans Bold', sans-serif;
-    font-size: x-large;
+    font-size: 24px;
   }
 
   body figcaption {
     font-family: 'SoDo Sans Light Italic', sans-serif;
+    font-size: 12px;
   }
 
   .header-content {
