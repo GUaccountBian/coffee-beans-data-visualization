@@ -138,15 +138,16 @@ body {
 
 .d-md-flex {
   display: flex;
+  justify-content: center;
 }
 
 .flex-md-equal {
   flex: 1;
 }
 
-.w-100 {
+/* .w-100 {
   width: 100%;
-}
+} */
 
 .my-md-3 {
   margin-top: 1rem;
@@ -154,7 +155,8 @@ body {
 }
 
 .ps-md-3 {
-  padding-left: 1rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
 }
 
 .bg-light {
