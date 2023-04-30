@@ -954,6 +954,7 @@ Guatemala,Catuai
 Honduras,Caturra`;
 
 
+
 let data = d3.csvParse(csvData);
 processData(data);
 
@@ -981,26 +982,43 @@ function processData(data) {
     });
 
     // Create the chord diagram
-    createChordDiagram(matrix, [...countries, ...varieties]);
+    createChordDiagram(matrix, [...countries, ...varieties], countries, varieties);
 }
 
-function createChordDiagram(matrix, labels) {
+function createChordDiagram(matrix, labels, countries, varieties) {
     // Set the dimensions of the diagram
     let width = 1000;
     let height = 600;
     let outerRadius = Math.min(width, height) * 0.5 - 40;
     let innerRadius = outerRadius - 30;
-
+    
     // Create the chord layout
-    let chord = d3.chord().padAngle(0.05).sortSubgroups(d3.descending)(
+    let chord = d3.chord().padAngle(0.07).sortSubgroups(d3.descending)(
         matrix
     );
 
     // Create the color scale
-    let color = d3
-        .scaleOrdinal()
-        .domain(d3.range(labels.length))
-        .range(d3.schemeCategory10);
+    // Create separate color scales for countries and varieties
+    let countryColor = d3
+        .scaleLinear()
+        .domain([0, countries.length - 1])
+        .range([d3.rgb("#CAFAEC"), d3.rgb("#A1FABB")])
+        .interpolate(d3.interpolateRgb);
+
+    let varietyColor = d3
+        .scaleLinear()
+        .domain([0, varieties.length - 1])
+        .range([d3.rgb("#8B4513"), d3.rgb("#F4A460")])
+        .interpolate(d3.interpolateRgb);
+
+    // Create the color function
+    let color = (index) => {
+        if (index < countries.length) {
+            return countryColor(index);
+        } else {
+            return varietyColor(index - countries.length);
+        }
+    };
 
     // Create the SVG container
     let svg = d3
@@ -1057,8 +1075,8 @@ function createChordDiagram(matrix, labels) {
         .data(chord)
         .join("path")
         .attr("d", ribbon)
-        .attr("fill", d => color(d.source.index))
-        .attr("stroke", d => d3.rgb(color(d.source.index)).darker())
+        .attr("fill", d => d3.rgb(varietyColor(d.source.index - countries.length)).brighter(1))
+        .attr("stroke", d => d3.rgb(varietyColor(d.source.index - countries.length)).darker())
         .style("opacity", 0.3)
         .on("mouseover", (event, d) => {
             // Highlight the selected chord
@@ -1083,19 +1101,19 @@ function createChordDiagram(matrix, labels) {
 
     // Add labels to the arcs
     svg.append("g")
-    .attr("class", "labels")
-    .attr("font-size", 10)
-    .attr("font-weight", "bold")
-    .selectAll("text")
-    .data(chord.groups)
-    .join("text")
-    .attr("transform", d => {
-        const angle = (d.startAngle + d.endAngle) / 2;
-        const xPos = Math.cos(angle - Math.PI / 2) * (outerRadius + 10);
-        const yPos = Math.sin(angle - Math.PI / 2) * (outerRadius + 10);
-        return `translate(${xPos}, ${yPos})`;
-    })
-    .attr("dy", ".35em")
-    .attr("text-anchor", d => ((d.startAngle + d.endAngle) / 2 > Math.PI) ? "end" : "start")
-    .text((d, i) => labels[i]);
+        .attr("class", "labels")
+        .attr("font-size", 10)
+        .attr("font-weight", "bold")
+        .selectAll("text")
+        .data(chord.groups)
+        .join("text")
+        .attr("transform", d => {
+            const angle = (d.startAngle + d.endAngle) / 2;
+            const xPos = Math.cos(angle - Math.PI / 2) * (outerRadius + 10);
+            const yPos = Math.sin(angle - Math.PI / 2) * (outerRadius + 10);
+            return `translate(${xPos}, ${yPos})`;
+        })
+        .attr("dy", ".35em")
+        .attr("text-anchor", d => ((d.startAngle + d.endAngle) / 2 > Math.PI) ? "end" : "start")
+        .text((d, i) => labels[i]);
 }
