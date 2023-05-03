@@ -1038,7 +1038,7 @@ function createSankeyDiagram(matrix, labels, countries, varieties) {
 
     let link = svg.append("g")
         .attr("fill", "none")
-        .attr("stroke-opacity", 0.3)
+        .attr("stroke-opacity", 0.1)
         .selectAll("g")
         .data(graph.links)
         .join("g");
@@ -1051,7 +1051,7 @@ function createSankeyDiagram(matrix, labels, countries, varieties) {
             d3.select(this).transition().style("stroke-opacity", 1);
         })
         .on("mouseout", function (event, d) {
-            d3.select(this).transition().style("stroke-opacity", 0.3);
+            d3.select(this).transition().style("stroke-opacity", 0.1);
         });
 
     let node = svg.append("g")
@@ -1077,7 +1077,7 @@ function createSankeyDiagram(matrix, labels, countries, varieties) {
             d3.selectAll("path")
                 .filter(dd => dd.source === d || dd.target === d)
                 .transition()
-                .style("stroke-opacity", 0.3);
+                .style("stroke-opacity", 0.1);
         });
 
     node.append("text")
