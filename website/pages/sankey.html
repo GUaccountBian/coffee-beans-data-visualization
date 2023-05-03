@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sankey Diagram</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js"></script>
+  <style>
+    .links line {
+      stroke: #999;
+      stroke-opacity: 0.6;
+    }
+
+    .nodes rect {
+      fill-opacity: .9;
+      shape-rendering: crispEdges;
+      stroke-width: 0;
+    }
+
+    .nodes text {
+      font: 10px sans-serif;
+      pointer-events: none;
+      text-shadow: 0 1px 0 #fff;
+    }
+  </style>
+</head>
+<body>
+    <script src="../script/sankey.js"></script>
+</body>
+</html>
