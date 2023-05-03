@@ -981,7 +981,7 @@ function processData(data) {
 }
 
 function createSankeyDiagram(matrix, labels, countries, varieties) {
-    let width = 1000;
+    let width = 950;
     let height = 600;
 
     let countryColor = d3
