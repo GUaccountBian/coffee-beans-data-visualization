@@ -246,6 +246,15 @@ figcaption {
   text-decoration: none;
 }
 
+.dropbtn-1 {
+  display: inline-block;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
 /* Style the dropdown content */
 .dropdown-content {
   display: none;
